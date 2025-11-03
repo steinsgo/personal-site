@@ -1,5 +1,5 @@
-import { useLanguage } from "@/lib/site-context";
 import type { Thought } from "@/data/thoughts";
+import { useLanguage } from "@/lib/site-context";
 
 type ThoughtNotebookProps = {
   thoughts: Thought[];
@@ -30,7 +30,7 @@ export function ThoughtNotebook({ thoughts }: ThoughtNotebookProps) {
               ))}
             </div>
           </div>
-          <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+          <h3 className="text-4xl font-semibold leading-tight text-slate-500 tracking-tight sm:text-xl">
             {thought.title[language]}
           </h3>
           <p className="text-sm leading-relaxed text-slate-600 dark:text-white/70">

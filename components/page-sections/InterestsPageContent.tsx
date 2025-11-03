@@ -75,7 +75,7 @@ export function InterestsPageContent() {
       <InterestGallery interests={interests} />
 
       <section className="rounded-[32px] border border-white/40 kawaii-surface p-8 text-slate-800 dark:text-white/80 shadow-[0_50px_120px_-70px_rgba(236,72,153,0.55)] backdrop-blur dark:border-white/20">
-        <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
+        <h2 className="text-4xl font-semibold leading-tight tracking-tight sm:text-2xl">
           {language === "zh" ? "进行中的微型项目" : "Mini projects in motion"}
         </h2>
         <p className="mt-2 text-sm text-slate-500 dark:text-white/60">
@@ -90,7 +90,7 @@ export function InterestsPageContent() {
               className="flex flex-col gap-3 rounded-[26px] border border-slate-200/60 kawaii-surface p-6 shadow-[0_28px_70px_-60px_rgba(236,72,153,0.55)] dark:border-white/20"
             >
               <div className="flex items-center justify-between gap-3">
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                <h3 className="text-4xl font-semibold leading-tight tracking-tight sm:text-xl">
                   {project.name[language]}
                 </h3>
                 <span className="rounded-full bg-slate-900/90 px-3 py-1 text-xs font-semibold uppercase tracking-[0.32em] text-white dark:bg-white/20">

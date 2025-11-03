@@ -1,0 +1,45 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model GuestbookUser {
+  id           String           @id @default(cuid())
+  nickname     String           @unique
+  passwordHash String
+  publicId     String           @unique
+  createdAt    DateTime         @default(now())
+  entries      GuestbookEntry[]
+  replies      GuestbookReply[]
+}
+
+model GuestbookEntry {
+  id          String           @id @default(cuid())
+  name        String
+  message     String
+  createdAt   DateTime         @default(now())
+  isAnonymous Boolean          @default(false)
+  authorId    String?
+  author      GuestbookUser?   @relation(fields: [authorId], references: [id], onDelete: SetNull)
+  replies     GuestbookReply[]
+
+  @@index([authorId])
+}
+
+model GuestbookReply {
+  id          String         @id @default(cuid())
+  entryId     String
+  entry       GuestbookEntry @relation(fields: [entryId], references: [id], onDelete: Cascade)
+  name        String
+  message     String
+  createdAt   DateTime       @default(now())
+  isAnonymous Boolean        @default(false)
+  authorId    String?
+  author      GuestbookUser? @relation(fields: [authorId], references: [id], onDelete: SetNull)
+
+  @@index([authorId])
+}

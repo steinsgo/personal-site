@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useMemo, useState } from "react";
 import type { Thought } from "@/data/thoughts";
 import { useLanguage } from "@/lib/site-context";
+import { useEffect, useMemo, useState } from "react";
 
 type InspirationProps = {
   thoughts: Thought[];
@@ -50,11 +50,13 @@ export function Inspiration({ thoughts }: InspirationProps) {
   }
 
   return (
-    <div className="card-frosted flex flex-col gap-4 p-6 text-slate-800 dark:text-white/80">
+    <div className="card-frosted flex flex-col gap-4 p-6 text-slate-500 dark:text-white/80">
       <span className="badge-soft bg-purple-100 text-purple-700 dark:bg-white/10 dark:text-purple-200">
         {language === "zh" ? "今日灵感闪闪" : "Idea of the moment"}
       </span>
-      <h3 className="text-xl font-semibold text-slate-900 dark:text-white">{current.title[language]}</h3>
+      <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-xl">
+        {current.title[language]}
+      </h1>
       <p className="text-sm leading-relaxed text-slate-600 dark:text-white/70">{current.excerpt[language]}</p>
       <div className="flex flex-wrap items-center gap-3 text-xs font-medium text-slate-400 dark:text-white/50">
         <time>{current.date}</time>

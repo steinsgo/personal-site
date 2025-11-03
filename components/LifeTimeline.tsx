@@ -1,5 +1,5 @@
-import { useLanguage } from "@/lib/site-context";
 import type { LifeEvent } from "@/data/life";
+import { useLanguage } from "@/lib/site-context";
 
 type LifeTimelineProps = {
   items: LifeEvent[];
@@ -24,7 +24,7 @@ export function LifeTimeline({ items }: LifeTimelineProps) {
               {event.date}
             </span>
             <div>
-              <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
+              <h3 className="text-4xl font-semibold leading-tight tracking-tight sm:text-xl">
                 {event.title[language]}
               </h3>
               {event.location ? (

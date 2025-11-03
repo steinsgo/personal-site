@@ -1,5 +1,5 @@
-import { useLanguage } from "@/lib/site-context";
 import type { LifeEvent } from "@/data/life";
+import { useLanguage } from "@/lib/site-context";
 
 type LifeGridProps = {
   items: LifeEvent[];
@@ -13,7 +13,7 @@ export function LifeGrid({ items }: LifeGridProps) {
       {items.map((item) => (
         <article
           key={`${item.title.en}-${item.date}`}
-          className="card-frosted relative flex h-full flex-col gap-4 p-6 text-slate-800 transition-transform hover:-translate-y-1 hover:shadow-[0_32px_80px_-60px_rgba(236,72,153,0.55)] dark:text-white/80"
+          className="card-frosted relative flex h-full flex-col gap-4 p-6 text-slate-500 transition-transform hover:-translate-y-1 hover:shadow-[0_32px_80px_-60px_rgba(236,72,153,0.55)] dark:text-white/80"
         >
           <div className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.3em] text-slate-400 dark:text-white/50">
             <span>{item.date}</span>
@@ -21,7 +21,9 @@ export function LifeGrid({ items }: LifeGridProps) {
               <span className="text-pink-400 dark:text-pink-200">{item.location[language]}</span>
             ) : null}
           </div>
-          <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{item.title[language]}</h3>
+          <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-xl">
+            {item.title[language]}
+          </h1>
           <p className="text-sm leading-relaxed text-slate-600 dark:text-white/70">
             {item.description[language]}
           </p>

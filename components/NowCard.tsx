@@ -10,7 +10,7 @@ export function NowCard() {
         <span className="badge-soft bg-slate-900/90 text-white dark:bg-white/10 dark:text-pink-200">
           {nowCard.season[language]}
         </span>
-        <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
+        <h2 className="text-4xl font-semibold leading-tight tracking-tight sm:text-3xl">
           {language === "zh" ? "现在 - 我专注的内容" : "Now - what I am focused on"}
         </h2>
         <p className="text-sm leading-relaxed text-slate-600 dark:text-white/70">
