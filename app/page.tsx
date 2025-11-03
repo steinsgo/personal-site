@@ -1,65 +1,166 @@
-import Image from "next/image";
+'use client';
+
+import { Guestbook } from "@/components/Guestbook";
+import { Hero } from "@/components/Hero";
+import { Inspiration } from "@/components/Inspiration";
+import { InterestGallery } from "@/components/InterestGallery";
+import { LifeGrid } from "@/components/LifeGrid";
+import { NowCard } from "@/components/NowCard";
+import { Section } from "@/components/Section";
+import { SkillsShowcase } from "@/components/SkillsShowcase";
+import { interests } from "@/data/interests";
+import { lifeMoments } from "@/data/life";
+import { skills } from "@/data/skills";
+import { thoughts } from "@/data/thoughts";
+import { useLanguage } from "@/lib/site-context";
+import Link from "next/link";
+
+const sectionCopy = {
+  life: {
+    title: {
+      zh: "生活日志",
+      en: "Life log",
+    },
+    description: {
+      zh: "记录生活中每一个细微的心跳与里程碑，让我的故事不断升级~",
+      en: "Snapshots of tiny heartbeats and milestones that keep my story leveling up.",
+    },
+    cta: {
+      zh: "查看完整时间线",
+      en: "View the full timeline",
+    },
+  },
+  skills: {
+    title: {
+      zh: "技能图谱",
+      en: "Skill map",
+    },
+    description: {
+      zh: "记录学习过程中的每个技能点滴，让进度条保持闪耀。",
+      en: "Documenting lessons as cute skill cards so the progress bar stays glowing.",
+    },
+    cta: {
+      zh: "探索技能手册",
+      en: "Explore the skill manual",
+    },
+  },
+  interests: {
+    title: {
+      zh: "兴趣实验室",
+      en: "Interest lab",
+    },
+    description: {
+      zh: "把好奇心变成一个个小实验，让灵感在宇宙中迪斯科。",
+      en: "Turning curiosities into tiny experiments so inspiration can disco around the galaxy.",
+    },
+    cta: {
+      zh: "打开实验室",
+      en: "Open the lab",
+    },
+  },
+  thoughts: {
+    title: {
+      zh: "思维日志",
+      en: "Idea log",
+    },
+    description: {
+      zh: "记录下一次灵感闪现的瞬间，随时准备好与未来的自己对话。",
+      en: "Shuffle a notebook card and keep the conversation going with future-me.",
+    },
+    cta: {
+      zh: "阅读更多灵感记录",
+      en: "Read more field notes",
+    },
+  },
+  guestbook: {
+    title: {
+      zh: "留言簿",
+      en: "Guestbook",
+    },
+    description: {
+      zh: "留下你的问候或是对 fandom 的推荐，Steinsgo 会用闪耀的回复你！",
+      en: "Drop a hello or fandom recommendation and Steinsgo will reply with sparkles!",
+    },
+    cta: {
+      zh: "访问留言簿",
+      en: "Visit the dedicated guestbook page",
+    },
+  },
+} as const;
 
 export default function Home() {
+  const { language } = useLanguage();
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="flex flex-col gap-16">
+      <Hero />
+
+      <NowCard />
+
+      <Section
+        id="life"
+        title={sectionCopy.life.title[language]}
+        description={sectionCopy.life.description[language]}
+      >
+        <LifeGrid items={lifeMoments} />
+        <div className="mt-8 flex justify-end">
+          <Link href="/life" data-kawaii-sound="true" className="btn-secondary">
+            {sectionCopy.life.cta[language]}
+          </Link>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </Section>
+
+      <Section
+        id="skills"
+        title={sectionCopy.skills.title[language]}
+        description={sectionCopy.skills.description[language]}
+      >
+        <SkillsShowcase categories={skills} />
+        <div className="mt-8 flex justify-end">
+          <Link href="/skills" data-kawaii-sound="true" className="btn-secondary">
+            {sectionCopy.skills.cta[language]}
+          </Link>
         </div>
-      </main>
+      </Section>
+
+      <Section
+        id="interests"
+        title={sectionCopy.interests.title[language]}
+        description={sectionCopy.interests.description[language]}
+      >
+        <InterestGallery interests={interests} />
+        <div className="mt-8 flex justify-end">
+          <Link href="/interests" data-kawaii-sound="true" className="btn-secondary">
+            {sectionCopy.interests.cta[language]}
+          </Link>
+        </div>
+      </Section>
+
+      <Section
+        id="thoughts"
+        title={sectionCopy.thoughts.title[language]}
+        description={sectionCopy.thoughts.description[language]}
+      >
+        <Inspiration thoughts={thoughts} />
+        <div className="mt-8 flex justify-end">
+          <Link href="/thoughts" data-kawaii-sound="true" className="btn-secondary">
+            {sectionCopy.thoughts.cta[language]}
+          </Link>
+        </div>
+      </Section>
+
+      <Section
+        id="guestbook"
+        title={sectionCopy.guestbook.title[language]}
+        description={sectionCopy.guestbook.description[language]}
+      >
+        <Guestbook />
+        <div className="mt-8 flex justify-end">
+          <Link href="/guestbook" data-kawaii-sound="true" className="btn-secondary">
+            {sectionCopy.guestbook.cta[language]}
+          </Link>
+        </div>
+      </Section>
     </div>
   );
 }

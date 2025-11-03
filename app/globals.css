@@ -1,26 +1,158 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+  --background-day: #fff6fb;
+  --foreground-day: #2f2435;
+  --background-night: #090d18;
+  --foreground-night: #f8f6ff;
+  --card-day: rgba(255, 255, 255, 0.88);
+  --card-night: rgba(17, 20, 36, 0.82);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--background-day);
+  --color-foreground: var(--foreground-day);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  color-scheme: dark;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.bg-root-pattern {
+  min-height: 100vh;
+  background-color: var(--background-day);
+  background-image:
+    linear-gradient(140deg, rgba(255, 214, 249, 0.75), rgba(209, 233, 255, 0.6) 45%, rgba(255, 255, 255, 0.85) 90%),
+    url("/images/anime-girl.png");
+  background-position: center right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--foreground-day);
+  font-family: var(--font-geist-sans), "Poppins", "Hiragino Sans GB", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+.dark .bg-root-pattern {
+  background-color: var(--background-night);
+  background-image:
+    linear-gradient(160deg, rgba(20, 16, 40, 0.92), rgba(39, 28, 71, 0.85) 55%, rgba(10, 15, 28, 0.95) 95%),
+    url("/images/anime-girl-night.png");
+  color: var(--foreground-night);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  background: linear-gradient(135deg, #f472b6, #8b5cf6);
+  color: #fff5f7;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: transform 150ms ease, box-shadow 150ms ease, filter 150ms ease;
+  box-shadow: 0 18px 40px -22px rgba(236, 72, 153, 0.55);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 55px -28px rgba(168, 85, 247, 0.7);
+  filter: brightness(1.05);
+}
+
+.btn-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  background: rgba(255, 255, 255, 0.66);
+  color: #334155;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease, color 150ms ease;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.9);
+  color: #ec4899;
+  box-shadow: 0 18px 40px -30px rgba(59, 130, 246, 0.6);
+}
+
+.btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.dark .btn-secondary {
+  background: rgba(255, 255, 255, 0.12);
+  color: #f1f5f9;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.dark .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+}
+
+.card-frosted {
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: var(--card-day);
+  box-shadow: 0 28px 70px -50px rgba(236, 72, 153, 0.6);
+  backdrop-filter: blur(18px);
+}
+
+.dark .card-frosted {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: var(--card-night);
+  box-shadow: 0 28px 70px -50px rgba(14, 26, 64, 0.6);
+}
+
+.kawaii-surface {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  backdrop-filter: blur(18px);
+}
+
+.dark .kawaii-surface {
+  background: rgba(18, 20, 36, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--foreground-night);
+}
+
+.badge-soft {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 9999px;
+  padding: 0.15rem 0.65rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  background: rgba(236, 72, 153, 0.13);
+  color: #db2777;
+}
+
+.dark .badge-soft {
+  background: rgba(236, 72, 153, 0.22);
+  color: #fbcfe8;
 }
