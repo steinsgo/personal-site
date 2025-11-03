@@ -1,8 +1,8 @@
 'use client';
 
-import { useLanguage } from "@/lib/site-context";
-import { interests } from "@/data/interests";
 import { InterestGallery } from "@/components/InterestGallery";
+import { interests } from "@/data/interests";
+import { useLanguage } from "@/lib/site-context";
 
 const miniProjects = [
   {
@@ -64,7 +64,7 @@ export function InterestsPageContent() {
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-200/60 bg-emerald-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-emerald-500 dark:border-emerald-300/30 dark:bg-white/10 dark:text-emerald-200">
           {heroCopy.badge[language]}
         </div>
-        <h1 className="text-4xl font-semibold leading-tight text-slate-900 dark:text-white sm:text-5xl">
+        <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-4xl">
           {heroCopy.heading[language]}
         </h1>
         <p className="mt-6 max-w-3xl text-sm leading-relaxed text-slate-600 dark:text-white/70 sm:text-base">

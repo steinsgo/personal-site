@@ -29,7 +29,7 @@ export function ThoughtsPageContent() {
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-purple-200/60 bg-purple-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-purple-500 dark:border-purple-300/30 dark:bg-white/10 dark:text-purple-200">
           {heroCopy.badge[language]}
         </div>
-        <h1 className="text-4xl font-semibold leading-tight text-slate-900 dark:text-white sm:text-5xl">
+        <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-4xl">
           {heroCopy.heading[language]}
         </h1>
         <p className="mt-6 max-w-3xl text-sm leading-relaxed text-slate-600 dark:text-white/70 sm:text-base">
