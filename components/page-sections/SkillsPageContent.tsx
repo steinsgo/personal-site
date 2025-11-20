@@ -60,7 +60,7 @@ const heroCopy = {
     en: "Skill manual for the projects I cherish",
   },
   description: {
-    zh: "这份地图记录了我常用的工具、正在打磨的能力，以及保持热情的小仪式。工程、创意编码、自建服务与计算机视觉研究在这里串联。",
+    zh: "这份地图记录了我常用的工具、正在打磨的能力。工程、创意编码、自建服务与计算机视觉研究在这里串联。",
     en: "This map tracks the tools I reach for, the skills I polish, and the rituals that keep experiments joyful—engineering, creative coding, self-hosting, and computer vision research intertwined.",
   },
 } as const;

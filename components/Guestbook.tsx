@@ -35,7 +35,7 @@ type ReplyDraft = {
 
 const anonymousLabels = {
   zh: {
-    displayName: "匿名软萌访客",
+    displayName: "匿名访客",
     badge: "匿名",
   },
   en: {

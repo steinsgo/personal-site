@@ -11,7 +11,7 @@ const heroCopy = {
     en: "Life Stream",
   },
   heading: {
-    zh: "生活碎片，带着意图被收集",
+    zh: "生活碎片",
     en: "Life fragments collected with intention",
   },
   description: {
@@ -23,7 +23,7 @@ const heroCopy = {
     en: "Jump to skill map",
   },
   secondary: {
-    zh: "打开兴趣实验室",
+    zh: "查看我的兴趣爱好",
     en: "Visit the interest lab",
   },
 } as const;

@@ -1,0 +1,6 @@
+numpy==1.26.*
+opencv-python>=4.8
+onnxruntime>=1.18
+pillow
+insightface==0.7.3
+nano

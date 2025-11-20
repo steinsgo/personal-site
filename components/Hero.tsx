@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const copy = {
   badge: {
-    zh: "欢迎来到 Steinsgo 的温馨角落",
+    zh: "欢迎来到 Steinsgo 的个人主页",
     en: "Welcome to Steinsgo's cozy corner",
   },
   heading: {
@@ -11,15 +11,15 @@ const copy = {
     en: "Hi~ o(*￣▽￣*)ブ I'm Steinsgo!",
   },
   description: {
-    zh: "这个角落储存着生活冒险、手工魔法、粉丝宇宙和闪亮创意——把这里当作一个大大的拥抱！",
+    zh: "这里有着专属于我个人的日常、生活习惯、兴趣爱好、以及研究路线！",
     en: "This nook stores life adventures, craft magic, fandom universes, and sparkly ideas—consider this a big cuddle!",
   },
   primary: {
-    zh: "窥探生活冒险",
+    zh: "查看生活点滴",
     en: "Peek at life adventures",
   },
   secondary: {
-    zh: "留下你的问候或是对 fandom 的推荐，Steinsgo 会用闪耀的回复你！",
+    zh: "在留言簿写下你想说的话吧！",
     en: "Leave a hug in the guestbook",
   },
 } as const;

@@ -1,7 +1,7 @@
 ﻿'use client';
 
-import { useState, useRef, useEffect, type PointerEvent as ReactPointerEvent } from "react";
 import { useLanguage } from "@/lib/site-context";
+import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 
 const easterImages = [
   {

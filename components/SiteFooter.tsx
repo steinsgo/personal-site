@@ -1,7 +1,7 @@
 ﻿'use client';
 
-import Link from "next/link";
 import { useLanguage } from "@/lib/site-context";
+import Link from "next/link";
 
 const footerCopy = {
   tagline: {
@@ -22,7 +22,7 @@ const footerCopy = {
       en: "Skill map",
     },
     guestbook: {
-      zh: "留言抱抱",
+      zh: "留言簿",
       en: "Guestbook",
     },
   },

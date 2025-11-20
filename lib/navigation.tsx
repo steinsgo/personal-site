@@ -45,12 +45,12 @@ const xIcon = (
 );
 
 export const navItems: NavItem[] = [
-  { href: "/", label: { zh: "甜蜜首页", en: "Home" }, emoji: "🍰" },
-  { href: "/life", label: { zh: "生活冒险", en: "Life" }, emoji: "🌈" },
-  { href: "/skills", label: { zh: "技能魔法", en: "Skills" }, emoji: "🪄" },
+  { href: "/", label: { zh: "个人首页", en: "Home" }, emoji: "🍰" },
+  { href: "/life", label: { zh: "生活日常", en: "Life" }, emoji: "🌈" },
+  { href: "/skills", label: { zh: "我的技能", en: "Skills" }, emoji: "🪄" },
   { href: "/interests", label: { zh: "兴趣宇宙", en: "Interests" }, emoji: "🌌" },
-  { href: "/thoughts", label: { zh: "脑洞手札", en: "Ideas" }, emoji: "💭" },
-  { href: "/guestbook", label: { zh: "留言抱抱", en: "Guestbook" }, emoji: "📮" },
+  { href: "/thoughts", label: { zh: "我的脑洞", en: "Ideas" }, emoji: "💭" },
+  { href: "/guestbook", label: { zh: "留言簿", en: "Guestbook" }, emoji: "📮" },
 ];
 
 export const socialLinks: SocialLink[] = [

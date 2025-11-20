@@ -46,12 +46,12 @@ const heroCopy = {
     en: "Playground",
   },
   heading: {
-    zh: "好奇心实验室开门啦",
+    zh: "我的兴趣爱好介绍",
     en: "Curiosity lab now open",
   },
   description: {
-    zh: "我把灵感当实验，从声音、字形到互动故事，每个兴趣都做成一个小作品，欢迎一起探索新的兔子洞。",
-    en: "Every spark becomes a mini experiment—sound, lettering, interactive stories. Come explore new rabbit holes with me!",
+    zh: "我把灵感当实验，从声音调制到机器人组装，每个兴趣都有一段特别经历，欢迎一起探索Music和Robotics的世界！",
+    en: "Every spark becomes a mini experiment—sound and robotic design. Come explore new rabbit holes with me!",
   },
 } as const;
 
@@ -76,11 +76,11 @@ export function InterestsPageContent() {
 
       <section className="rounded-[32px] border border-white/40 kawaii-surface p-8 text-slate-800 dark:text-white/80 shadow-[0_50px_120px_-70px_rgba(236,72,153,0.55)] backdrop-blur dark:border-white/20">
         <h2 className="text-4xl font-semibold leading-tight tracking-tight sm:text-2xl">
-          {language === "zh" ? "进行中的微型项目" : "Mini projects in motion"}
+          {language === "zh" ? "进行中的想法" : "Mini projects in motion"}
         </h2>
         <p className="mt-2 text-sm text-slate-500 dark:text-white/60">
           {language === "zh"
-            ? "把兴趣落地成具体作品，一步步迭代成可分享的小工具。"
+            ? "把兴趣落地成具体作品，一步步分享我的实践过程。"
             : "Turning passions into shareable tools, iterating one sparkle at a time."}
         </p>
         <div className="mt-6 grid gap-5 md:grid-cols-3">

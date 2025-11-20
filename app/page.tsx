@@ -36,7 +36,7 @@ const sectionCopy = {
       en: "Skill map",
     },
     description: {
-      zh: "记录学习过程中的每个技能点滴，让进度条保持闪耀。",
+      zh: "记录学习过程中的每个技能点滴，无限进步。",
       en: "Documenting lessons as cute skill cards so the progress bar stays glowing.",
     },
     cta: {
@@ -46,15 +46,15 @@ const sectionCopy = {
   },
   interests: {
     title: {
-      zh: "兴趣实验室",
+      zh: "兴趣爱好",
       en: "Interest lab",
     },
     description: {
-      zh: "把好奇心变成一个个小实验，让灵感在宇宙中迪斯科。",
+      zh: "把好奇心变成一个个兴趣，不断实验和迭代想法，让灵感在宇宙中跳舞。",
       en: "Turning curiosities into tiny experiments so inspiration can disco around the galaxy.",
     },
     cta: {
-      zh: "打开实验室",
+      zh: "研究实验室",
       en: "Open the lab",
     },
   },
@@ -78,7 +78,7 @@ const sectionCopy = {
       en: "Guestbook",
     },
     description: {
-      zh: "留下你的问候或是对 fandom 的推荐，Steinsgo 会用闪耀的回复你！",
+      zh: "在留言簿写下你想说的话吧！",
       en: "Drop a hello or fandom recommendation and Steinsgo will reply with sparkles!",
     },
     cta: {

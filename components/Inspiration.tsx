@@ -52,7 +52,7 @@ export function Inspiration({ thoughts }: InspirationProps) {
   return (
     <div className="card-frosted flex flex-col gap-4 p-6 text-slate-500 dark:text-white/80">
       <span className="badge-soft bg-purple-100 text-purple-700 dark:bg-white/10 dark:text-purple-200">
-        {language === "zh" ? "今日灵感闪闪" : "Idea of the moment"}
+        {language === "zh" ? "今日灵感脑洞" : "Idea of the moment"}
       </span>
       <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-xl">
         {current.title[language]}

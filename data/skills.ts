@@ -9,11 +9,11 @@ export type SkillCategory = {
 export const skills: SkillCategory[] = [
   {
     title: {
-      zh: "前端闪光棒",
+      zh: "前端React",
       en: "Frontend sparkle wand",
     },
     highlight: {
-      zh: "既要快也要可爱，还要懂视觉",
+      zh: "前端设计",
       en: "Ship fast, stay adorable, stay vision-savvy",
     },
     items: [
