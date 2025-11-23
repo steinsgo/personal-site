@@ -1,5 +1,6 @@
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
 }
 
 datasource db {
@@ -7,39 +8,61 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model GuestbookUser {
-  id           String           @id @default(cuid())
-  nickname     String           @unique
+model User {
+  id           String   @id @default(cuid())
+  username     String   @unique        // 昵称 = 登录名
+  email        String?  @unique
   passwordHash String
-  publicId     String           @unique
-  createdAt    DateTime         @default(now())
+  createdAt    DateTime @default(now())
   entries      GuestbookEntry[]
   replies      GuestbookReply[]
+  sessions     Session[]
+}
+
+model Session {
+  id         String   @id              // 随机 token
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt  DateTime @default(now())
+  expiresAt  DateTime
+  userAgent  String?
+  ipHash     String?
+
+  @@index([userId])
+  @@index([expiresAt])
 }
 
 model GuestbookEntry {
-  id          String           @id @default(cuid())
-  name        String
+  id          String    @id @default(cuid())
+  userId      String?   // 匿名留言也允许 userId 为空
+  user        User?     @relation(fields: [userId], references: [id])
+  authorType  String    // 'user' | 'anonymous'
+  displayName String    // 展示名：实名=用户名；匿名=“匿名访客”等
   message     String
-  createdAt   DateTime         @default(now())
-  isAnonymous Boolean          @default(false)
-  authorId    String?
-  author      GuestbookUser?   @relation(fields: [authorId], references: [id], onDelete: SetNull)
-  replies     GuestbookReply[]
+  status      String    @default("active")
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
 
-  @@index([authorId])
+  replies     GuestbookReply[]
+  @@index([createdAt])
 }
 
 model GuestbookReply {
   id          String         @id @default(cuid())
   entryId     String
   entry       GuestbookEntry @relation(fields: [entryId], references: [id], onDelete: Cascade)
-  name        String
-  message     String
-  createdAt   DateTime       @default(now())
-  isAnonymous Boolean        @default(false)
-  authorId    String?
-  author      GuestbookUser? @relation(fields: [authorId], references: [id], onDelete: SetNull)
 
-  @@index([authorId])
+  userId      String?
+  user        User?          @relation(fields: [userId], references: [id])
+  authorType  String
+  displayName String
+  message     String
+  status      String         @default("active")
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+  deletedAt   DateTime?
+
+  @@index([entryId])
+  @@index([createdAt])
 }

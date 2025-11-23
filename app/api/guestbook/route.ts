@@ -1,150 +1,83 @@
-import { NextResponse } from "next/server";
-import { z } from "zod";
-
-import type { Prisma } from "@prisma/client";
-
+// app/api/guestbook/route.ts
+import { getCurrentUser } from "@/lib/auth";
 import { prisma } from "@/lib/db";
-import { InvalidCredentialsError, resolveGuestbookUser } from "@/lib/guestbook-auth";
+import { NextRequest, NextResponse } from "next/server";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const entrySchema = z.object({
-  message: z.string().trim().min(1).max(500),
-  nickname: z.string().trim().min(1).max(50).optional(),
-  password: z.string().min(4).max(100).optional(),
-  anonymous: z.boolean().optional(),
-  anonymousName: z.string().trim().min(1).max(60).optional(),
-});
-
-type GuestbookEntryWithRelations = Prisma.GuestbookEntryGetPayload<{
-  include: {
-    author: { select: { publicId: true; nickname: true } };
-    replies: {
-      include: {
-        author: { select: { publicId: true; nickname: true } };
-      };
-    };
-  };
-}>;
-
-type GuestbookReplyWithAuthor = GuestbookEntryWithRelations["replies"][number];
-
-function mapReply(reply: GuestbookReplyWithAuthor) {
-  return {
-    id: reply.id,
-    name: reply.name,
-    message: reply.message,
-    createdAt: reply.createdAt,
-    isAnonymous: reply.isAnonymous,
-    authorPublicId: reply.author ? reply.author.publicId : null,
-  };
-}
-
-function mapEntry(entry: GuestbookEntryWithRelations) {
-  return {
-    id: entry.id,
-    name: entry.name,
-    message: entry.message,
-    createdAt: entry.createdAt,
-    isAnonymous: entry.isAnonymous,
-    authorPublicId: entry.author ? entry.author.publicId : null,
-    replies: entry.replies.map(mapReply),
-  };
-}
-
+// 读取留言列表（不需要登录）
 export async function GET() {
-  const entries = await prisma.guestbookEntry.findMany({
+  const rows = await prisma.guestbookEntry.findMany({
+    where: { status: "active", deletedAt: null },
     orderBy: { createdAt: "desc" },
     take: 50,
-    include: {
-      author: {
-        select: {
-          publicId: true,
-          nickname: true,
-        },
-      },
-      replies: {
-        orderBy: { createdAt: "asc" },
-        take: 10,
-        include: {
-          author: {
-            select: {
-              publicId: true,
-              nickname: true,
-            },
-          },
-        },
-      },
-    },
   });
 
-  return NextResponse.json(entries.map(mapEntry));
+  const data = rows.map((e) => ({
+    id: e.id,
+    name: e.displayName,
+    message: e.message,
+    createdAt: e.createdAt.toISOString(),
+    isAnonymous: e.authorType === "anonymous",
+    authorPublicId: null as string | null,
+    replies: [] as any[], // 暂时不做回复，避免前端崩
+  }));
+
+  return NextResponse.json(data);
 }
 
-export async function POST(request: Request) {
-  const payload = await request.json().catch(() => null);
-  const parsed = entrySchema.safeParse(payload);
+// 发布新留言（必须登录）
+export async function POST(req: NextRequest) {
+  try {
+    const body = await req.json().catch(() => ({}));
+    const raw = String(body?.message ?? "").trim();
+    const anonymous = Boolean(body?.anonymous);
 
-  if (!parsed.success) {
-    return NextResponse.json({ error: "Invalid input" }, { status: 400 });
-  }
-
-  const { message, nickname, password, anonymous, anonymousName } = parsed.data;
-  const isAnonymous = anonymous ?? false;
-
-  let resolvedName = anonymousName?.trim() || "Secret Mochi";
-  let authorId: string | null = null;
-
-  if (!isAnonymous) {
-    if (!nickname || !password) {
+    if (!raw || raw.length > 500) {
       return NextResponse.json(
-        { error: "Nickname and password are required." },
+        { error: "留言长度需在 1~500 之间" },
         { status: 400 },
       );
     }
 
-    try {
-      const user = await resolveGuestbookUser(nickname, password);
-      resolvedName = user.nickname;
-      authorId = user.id;
-    } catch (error) {
-      if (error instanceof InvalidCredentialsError) {
-        return NextResponse.json({ error: "Wrong password." }, { status: 401 });
-      }
-      console.error("Failed to resolve guestbook user:", error);
-      return NextResponse.json({ error: "Failed to post entry." }, { status: 500 });
+    const user = await getCurrentUser(req);
+    if (!user) {
+      return NextResponse.json(
+        { error: "未登录，请先在右上角登录" },
+        { status: 401 },
+      );
     }
+
+    const authorType = anonymous ? "anonymous" : "user";
+    const displayName = anonymous ? "匿名访客" : user.username;
+
+    const created = await prisma.guestbookEntry.create({
+      data: {
+        userId: user.id,
+        authorType,
+        displayName,
+        message: raw,
+        status: "active",
+      },
+    });
+
+    const payload = {
+      id: created.id,
+      name: displayName,
+      message: created.message,
+      createdAt: created.createdAt.toISOString(),
+      isAnonymous: anonymous,
+      authorPublicId: null as string | null,
+      replies: [] as any[],
+    };
+
+    return NextResponse.json(payload, { status: 201 });
+  } catch (err) {
+    console.error("GUESTBOOK POST error", err);
+    return NextResponse.json(
+      { error: "服务器错误，请稍后再试" },
+      { status: 500 },
+    );
   }
-
-  const created = await prisma.guestbookEntry.create({
-    data: {
-      name: resolvedName,
-      message,
-      authorId,
-      isAnonymous,
-    },
-    include: {
-      author: {
-        select: {
-          publicId: true,
-          nickname: true,
-        },
-      },
-      replies: {
-        orderBy: { createdAt: "asc" },
-        take: 10,
-        include: {
-          author: {
-            select: {
-              publicId: true,
-              nickname: true,
-            },
-          },
-        },
-      },
-    },
-  });
-
-  return NextResponse.json(mapEntry(created), { status: 201 });
 }

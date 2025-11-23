@@ -1,5 +1,6 @@
 'use client';
 
+import { AuthStatus } from "@/components/AuthStatus";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { SiteSidebar } from "@/components/SiteSidebar";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -66,6 +67,7 @@ export function SiteHeader() {
           <LanguageToggle />
           <ThemeToggle />
         </div>
+        <AuthStatus />
       </header>
 
       <SiteSidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />

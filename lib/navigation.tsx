@@ -51,6 +51,8 @@ export const navItems: NavItem[] = [
   { href: "/interests", label: { zh: "兴趣宇宙", en: "Interests" }, emoji: "🌌" },
   { href: "/thoughts", label: { zh: "我的脑洞", en: "Ideas" }, emoji: "💭" },
   { href: "/guestbook", label: { zh: "留言簿", en: "Guestbook" }, emoji: "📮" },
+  { href: "/emotion/live", label: { zh: "情绪监管", en: "Detection" }, emoji: "📷" },
+  { href: "/emotion", label: { zh: "表情识别", en: "Detection" }, emoji: "🙂" },
 ];
 
 export const socialLinks: SocialLink[] = [
