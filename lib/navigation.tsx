@@ -53,6 +53,8 @@ export const navItems: NavItem[] = [
   { href: "/guestbook", label: { zh: "留言簿", en: "Guestbook" }, emoji: "📮" },
   { href: "/emotion/live", label: { zh: "情绪监管", en: "Detection" }, emoji: "📷" },
   { href: "/emotion", label: { zh: "表情识别", en: "Detection" }, emoji: "🙂" },
+  { href: "/chatroom", label: { zh: "聊天室", en: "Chat" }, emoji: "💬" },
+
 ];
 
 export const socialLinks: SocialLink[] = [

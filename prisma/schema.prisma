@@ -17,6 +17,40 @@ model User {
   entries      GuestbookEntry[]
   replies      GuestbookReply[]
   sessions     Session[]
+  // ✅ add
+  chatRooms    ChatRoom[]
+  chatMessages ChatMessage[]
+}
+
+model ChatRoom {
+  id          String   @id @default(cuid())
+  name        String
+  tag         String?
+  isPublic    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+
+  createdById String
+  createdBy   User     @relation(fields: [createdById], references: [id], onDelete: Cascade)
+
+  messages    ChatMessage[]
+
+  @@index([createdAt])
+}
+
+model ChatMessage {
+  id        String   @id @default(cuid())
+  roomId    String
+  room      ChatRoom @relation(fields: [roomId], references: [id], onDelete: Cascade)
+
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  kind      String   @default("text") // 'text' | 'image'
+  text      String?
+  imageUrl  String?
+  createdAt DateTime @default(now())
+
+  @@index([roomId, createdAt])
 }
 
 model Session {

@@ -1,0 +1,18 @@
+.videoWrap {
+  position: relative;
+  width: min(720px, 100%);
+  margin: 0;
+}
+.video {
+  width: 100%;
+  display: block;
+  background: #000;
+  border-radius: 12px;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 12px;
+}
+.capture { display: none; }
