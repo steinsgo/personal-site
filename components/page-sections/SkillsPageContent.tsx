@@ -26,7 +26,7 @@ const focusCards = [
       en: "Crafting creative helper tools",
     },
     detail: {
-      zh: "把灵感卡片、模板管理、声音采样做成可爱的网页工具，准备和朋友一起玩。",
+      zh: "把灵感卡片、模板管理、声音采样做成的网页工具，准备和朋友一起玩。",
       en: "Building web helpers for inspiration cards, template magic, and sound samples to share with friends.",
     },
     action: {

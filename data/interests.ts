@@ -9,45 +9,45 @@ export type Interest = {
 export const interests: Interest[] = [
   {
     title: {
-      zh: "偷听城市心跳",
-      en: "Eavesdropping on the city heartbeat",
+      zh: "音乐探索",
+      en: "Music Exploration",
     },
     description: {
-      zh: "收集街头风声、公交广播和咖啡机滋滋声，再和合成器混音做成萌萌配乐。",
-      en: "Collects breeze, bus chimes, and espresso hisses, remixing them with synths into cute city soundtracks.",
+      zh: "沉迷于日系音乐、摇滚、乐队表演、爵士乐、吉他弹奏、钢琴旋律和 Bossa Nova 节奏，喜欢通过这些元素创造出属于自己的音乐世界",
+      en: "Diving into Japanese music, rock, band performances, jazz, guitar playing, piano melodies, and Bossa Nova rhythms, enjoying the creation of personal soundscapes and sometimes humming along to the beats.",
     },
-    link: "https://citiesandmemory.com/",
+    link: "https://www.youtube.com/watch?v=hI9fjymKFlM&list=PLHIkGG3ThOG3ri8qe7rqB9ARv4HaDd7ry&index=55", // 替换为实际的 Lamp 乐队歌曲 YouTube 链接，例如 https://www.youtube.com/watch?v=dQw4w9WgXcQ
   },
   {
     title: {
-      zh: "手写字体小剧场",
-      en: "Hand-lettering theater",
+      zh: "机器人爱好",
+      en: "Robotics Passion",
     },
     description: {
-      zh: "研究笔画结构，在 iPad 上做自定义字体，让标题都带着乙女心。",
-      en: "Studies stroke structure and builds custom iPad typefaces so every heading sparkles with charm.",
+      zh: "最近超级着迷机器人领域，正在努力学习相关知识设计能通过视觉系统连接大脑的智能机器人，梦想是造哆啦a梦",
+      en: "Recently obsessed with robotics, actively learning the field, and aspiring to build a robot that connects vision systems to the brain for futuristic interactive experiences.",
     },
-    link: "https://www.fontsinuse.com/",
+    link:"https://www.youtube.com/watch?v=e-nbSGRFP4Q"
   },
   {
     title: {
-      zh: "微型互动糖果屋",
-      en: "Mini interactive candy house",
+      zh: "甜食重度依赖",
+      en: "Sweet Treats Craze",
     },
     description: {
-      zh: "用 p5.js 和 three.js 做小玩具，让文章里可以边玩边理解脑洞。",
-      en: "Builds p5.js and three.js toys so readers can poke ideas while reading.",
+      zh: "热爱各种甜点，尤其是巴菲、蛋糕和冰淇淋等，喜欢尝试新口味的甜食",
+      en: "Crazy about sweets like parfaits, cakes, and ice creams, enjoying trying new flavors, and sometimes baking them myself to savor that melting happiness.",
     },
   },
   {
     title: {
-      zh: "城市植物寻宝图",
-      en: "Urban plant treasure map",
+      zh: "游戏世界",
+      en: "Gaming World",
     },
     description: {
-      zh: "沿路标记四季植物，用 Leaflet 做地图，散步就像开箱惊喜。",
-      en: "Marks seasonal plants with Leaflet so every walk becomes an unboxing adventure.",
+      zh: "努力成为《怪物猎人》系列的“老东西天尊”，比较喜欢玩剧情类的 Galgame",
+      en: "Obsessed with the hunting adventures in Monster Hunter series and the narrative interactions in Galgames, loving to immerse in virtual worlds for stories and challenges, and sharing experiences with friends to extend the fun.",
     },
-    link: "https://leafletjs.com/",
+    link: "https://www.bilibili.com/video/BV1zjUFBHE5q/?spm_id_from=333.337.search-card.all.click&vd_source=d8720e6fd56359f5d75b47aa9761ea29"
   },
 ];

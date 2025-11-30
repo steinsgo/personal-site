@@ -14,43 +14,43 @@ export type NowCard = {
 
 export const nowCard: NowCard = {
   season: {
-    zh: "2024 秋季",
-    en: "Autumn 2024",
+    zh: "2025 冬季",
+    en: "Winter 2025",
   },
   location: {
-    zh: "杭州·江边工作室",
-    en: "Hangzhou - riverside studio loft",
+    zh: "珠海-横琴",
+    en: "Zhuhai-Hengqin",
   },
   vibe: {
-    zh: "让生活、手作和宅宅实验在同一节奏里跳舞。",
-    en: "Keeping life, craft, and tinkering dancing to the same rhythm.",
+    zh: "努力活着，永远不死",
+    en: "Trying to live, never die",
   },
   focus: [
     {
-      zh: "为自建服务器调试监控小精灵脚本",
-      en: "Tuning monitoring sprites for the self-hosted server",
+      zh: "正在实践小车加自动避障功能...(或者让它实现3d建图?)",
+      en: " Implementing obstacle avoidance for my small car...(or let it do 3D mapping?)",
     },
     {
-      zh: "整理全站的萌萌设计语言与组件库",
-      en: "Polishing the kawaii site design language and component library",
+      zh: "计算机视觉图像恢复方法研究--超分辨率、去噪声",
+      en: " Research on computer vision image restoration methods--super-resolution, denoising",
     },
     {
-      zh: "筹备线下声音漫步工作坊：一起听城市唱歌",
-      en: "Preparing an offline sound-walk workshop to let the city sing together",
+      zh: "努力申请研究生中",
+      en: " Working hard on applying for graduate school",
     },
   ],
   soundtrack: {
     title: {
-      zh: "City Light Sketch",
-      en: "City Light Sketch",
+      zh: "每日推荐",
+      en: " Daily Recommendation",
     },
     artist: {
-      zh: "Saeglopur Remix - Sigur Ros",
-      en: "Saeglopur Remix - Sigur Ros",
+      zh: "気になるあの娘 - 相対性理論",
+      en: " Kininaru Anoko - Sōtaisei Riron",
     },
   },
   moodboard: {
-    zh: "柔柔电子 + 细雨采样，编码时像在排练动漫主题曲。",
-    en: "Soft electronic layers plus drizzle samples make coding feel like rehearsing an anime theme song.",
+    zh: " ふつう ふつう わりと普通       ぐるぐるぐるぐるぐるぐるぐるぐる",
+    en: "Don't   STOP   to  SPIN        ぐるぐるぐるぐるぐるぐるぐるぐる",
   },
 };

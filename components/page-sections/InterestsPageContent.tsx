@@ -4,38 +4,38 @@ import { InterestGallery } from "@/components/InterestGallery";
 import { interests } from "@/data/interests";
 import { useLanguage } from "@/lib/site-context";
 
-const miniProjects = [
+export const miniProjects = [
   {
     name: {
-      zh: "城市声音图集",
-      en: "Urban sound atlas",
-    },
-    status: "Beta",
-    description: {
-      zh: "把城市录音做成可视化波形，计划加入情绪与时间筛选。",
-      en: "Transforming city recordings into waveforms with mood and time filters in progress.",
-    },
-  },
-  {
-    name: {
-      zh: "随想折叠本",
-      en: "Folded thought journal",
-    },
-    status: "Draft",
-    description: {
-      zh: "卷轴式排版配上柔柔动画，让阅读像翻可爱实体书。",
-      en: "Scroll-inspired layouts plus soft animations to make reading feel like flipping a cute book.",
-    },
-  },
-  {
-    name: {
-      zh: "植物识别地图",
-      en: "Plant spotting map",
+      zh: "Radiohead 歌曲翻唱",
+      en: "Radiohead Song Cover",
     },
     status: "Idea",
     description: {
-      zh: "基于 Leaflet 的互动地图，记录社区散步遇到的四季植物。",
-      en: "Leaflet map hosted on the home server to log seasonal plants around the neighborhood.",
+      zh: "计划在河边录制 Radiohead 歌曲的翻唱版本",
+      en: "Planning to record a cover of a Radiohead song by the river, blending in natural sounds like flowing water and birdsong for a unique atmospheric feel.",
+    },
+  },
+  {
+    name: {
+      zh: "日本圣地巡礼",
+      en: "Japan Holy Sites Pilgrimage",
+    },
+    status: "Plan",
+    description: {
+      zh: "计划前往日本，参观动漫、音乐或文化相关的圣地，记录旅程中的照片、视频和心得，制作成个人旅行日志。",
+      en: "Planning a trip to Japan to visit holy sites related to anime, music, or culture, documenting the journey with photos, videos, and personal reflections into a travel log.",
+    },
+  },
+  {
+    name: {
+      zh: "视觉机器人项目",
+      en: "Visual Robot Project",
+    },
+    status: "Plan",
+    description: {
+      zh: "继续开发一个能通过视觉系统连接大脑的智能机器人，探索实时图像处理和AI互动功能，目标是实现更自然的机器人-人类交流。",
+      en: "Continuing to develop a smart robot that connects vision systems to the brain, exploring real-time image processing and AI interactions, aiming for more natural robot-human communication.",
     },
   },
 ] as const;

@@ -7,15 +7,15 @@ const easterImages = [
   {
     src: "/images/easter-1.png",
     alt: {
-      zh: "小猫研究员",
+      zh: "小猫",
       en: "Cat researcher",
     },
   },
   {
     src: "/images/easter-2.png",
     alt: {
-      zh: "粉色电路板",
-      en: "Pink circuit board",
+      zh: "电路板",
+      en: "circuit board",
     },
   },
   {
@@ -89,7 +89,7 @@ export function MagicPopup() {
         onClick={togglePopup}
         className="fixed bottom-6 right-6 z-40 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400 px-5 py-3 text-sm font-semibold text-white shadow-[0_25px_80px_-40px_rgba(236,72,153,0.75)] transition hover:-translate-y-1"
       >
-        {open ? (language === "zh" ? "收起彩蛋 (•ᴗ•)✧" : "Hide easter egg (•ᴗ•)✧") : language === "zh" ? "打开彩蛋小窗 (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧" : "Open easter egg window (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧"}
+        {open ? (language === "zh" ? "功德+1 upupup(•ᴗ•)✧" : "Merit +1 ") : language === "zh" ? "电子木鱼🐟" : "Elect-WoodenFish🐟"}
       </button>
 
       {open ? (

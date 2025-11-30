@@ -99,4 +99,4 @@ export async function GET(req: Request) {
     },
   });
 }
-//我自己买了godady的域名，然后我有一台可以跑的服务器这样可以吗
+//

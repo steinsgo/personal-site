@@ -11,70 +11,70 @@ export type LifeEvent = {
 export const lifeMoments: LifeEvent[] = [
   {
     title: {
-      zh: "搬到江边的小秘密基地",
-      en: "Moved into my riverside secret base",
+      zh: "第一次用手柄蓝牙操控小车",
+      en: "First time controlling my car with a Bluetooth gamepad",
     },
     description: {
-      zh: "把钱塘江的晨跑当成魔力充电，每周都要记录咖啡香、街头猫咪和亮晶晶的河面。",
-      en: "Morning jogs by the Qiantang have become magic recharge sessions filled with coffee aromas, street cats, and sparkling water.",
+      zh: "妈的谁学嵌入式谁傻逼",
+      en: " Damn who studies embedded systems is a fool",
     },
-    date: "2024.09",
+    date: "2025.11.29",
     location: {
-      zh: "杭州",
-      en: "Hangzhou",
+      zh: "珠海",
+      en: "Zhuhai",
     },
     highlight: {
-      zh: "江风打卡",
-      en: "River breeze check-ins",
+      zh: "吐槽",
+      en: "Rant",
     },
   },
   {
     title: {
-      zh: "第一次完成半程马拉松",
-      en: "Finished my first half marathon",
+      zh: "实验的baseline跑错了",
+      en: " Ran the experiment baseline wrong",
     },
     description: {
-      zh: "早起训练 + 自制能量棒 = 成就感爆棚！冲线那刻真的想抱住全世界。",
-      en: "Early-morning training plus homemade energy bars equaled massive joy—even wanted to hug the whole world at the finish line.",
+      zh: "我不行了，谁做计算机视觉谁傻逼",
+      en: " I'm done, whoever does computer vision is a fool",
     },
-    date: "2023.11",
+    date: "2025.11.27",
     location: {
-      zh: "厦门",
-      en: "Xiamen",
+      zh: "珠海",
+      en: "Zhuhai",
     },
     highlight: {
-      zh: "给汗水点个赞",
-      en: "High-five the sweat",
+      zh: "计算机视觉",
+      en: "Cv",
     },
   },
   {
     title: {
-      zh: "第 100 篇软萌技术手记",
-      en: "Published the 100th soft-tech journal",
+      zh: "好久没别人合照",
+      en: "It's been a long time since I've taken a group photo with anyone.",
     },
     description: {
-      zh: "把 Next.js、Three.js、Tailwind 的实验做成卡片，像堆积乐高一样慢慢搭建宇宙。",
-      en: "Turned Next.js, Three.js, and Tailwind experiments into collectible cards—building a mini universe like stacking pastel LEGO.",
+      zh: "嵌入式还是很有意思的，今天课上任老师帮我焊接了电机，感谢感谢！终于可以开始装小车了:/突然被b专同学合照，好久没别人合照了",
+      en: "Embedded systems are really interesting. Today in class, my teacher helped me solder the motor, thank you so much! Finally, I can start assembling my little car :/ Suddenly I got a group photo taken with a classmate from the B major; it's been so long since I've had a group photo taken with anyone.",
     },
-    date: "2024.04",
+    date: "2025.11.26",
     highlight: {
-      zh: "知识泡泡",
-      en: "Knowledge bubbles",
+      zh: "学习",
+      en: "Knowledge",
     },
   },
   {
     title: {
-      zh: "周末创作派对上线",
-      en: "Weekend creative party launched",
+      zh: "新买的深度相机可以用的",
+      en: " I Brought a new Depth camera",
     },
     description: {
-      zh: "和朋友玩声音、插画和故事游戏，最后办了迷你展，每个人都笑到停不下来。",
-      en: "Invited friends for sound, illustration, and story jams that ended with a grinning mini showcase.",
+      zh: "70块钱要什么自行车啊",
+      en: "Only 70 yuan, cheap",
     },
-    date: "2024.07",
+    date: "2024.11.19",
     highlight: {
-      zh: "好友增益 buff",
-      en: "Friendship buff",
+      zh: "学习",
+      en: "Knowledge",
     },
   },
 ];

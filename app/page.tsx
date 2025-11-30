@@ -91,6 +91,8 @@ const sectionCopy = {
 export default function Home() {
   const { language } = useLanguage();
 
+const previewLimit = 4;
+
   return (
     <div className="flex flex-col gap-16">
       <Hero />
@@ -102,7 +104,7 @@ export default function Home() {
         title={sectionCopy.life.title[language]}
         description={sectionCopy.life.description[language]}
       >
-        <LifeGrid items={lifeMoments} />
+        <LifeGrid items={lifeMoments.slice(0, previewLimit)} />
         <div className="mt-8 flex justify-end">
           <Link href="/life" data-kawaii-sound="true" className="btn-secondary">
             {sectionCopy.life.cta[language]}
@@ -115,7 +117,7 @@ export default function Home() {
         title={sectionCopy.skills.title[language]}
         description={sectionCopy.skills.description[language]}
       >
-        <SkillsShowcase categories={skills} />
+        <SkillsShowcase categories={skills.slice(0, previewLimit)} />
         <div className="mt-8 flex justify-end">
           <Link href="/skills" data-kawaii-sound="true" className="btn-secondary">
             {sectionCopy.skills.cta[language]}
@@ -128,7 +130,7 @@ export default function Home() {
         title={sectionCopy.interests.title[language]}
         description={sectionCopy.interests.description[language]}
       >
-        <InterestGallery interests={interests} />
+        <InterestGallery interests={interests.slice(0, previewLimit)} />
         <div className="mt-8 flex justify-end">
           <Link href="/interests" data-kawaii-sound="true" className="btn-secondary">
             {sectionCopy.interests.cta[language]}

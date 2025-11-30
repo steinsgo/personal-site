@@ -7,66 +7,102 @@ export type SkillCategory = {
 };
 
 export const skills: SkillCategory[] = [
+
   {
     title: {
-      zh: "前端React",
-      en: "Frontend sparkle wand",
+      zh: "计算机视觉",
+      en: "Computer Vision",
     },
     highlight: {
-      zh: "前端设计",
-      en: "Ship fast, stay adorable, stay vision-savvy",
+      zh: "图像处理与恢复技术",
+      en: "Image Processing and Restoration Techniques",
     },
     items: [
       {
-        zh: "React 伙伴：Next.js App Router、React Query、Zustand",
-        en: "React buddies: Next.js App Router, React Query, Zustand",
+        zh: "Moe 风格图像生成与优化",
+        en: "Moe-style image generation and optimization",
       },
       {
-        zh: "样式魔法：Tailwind、Framer Motion、CSS Modules",
-        en: "Styling magic: Tailwind, Framer Motion, CSS Modules",
+        zh: "4K 高分辨率图像恢复算法",
+        en: "4K high-resolution image restoration algorithms",
       },
       {
-        zh: "小工具箱：Vite、Turbopack、Vitest、Playwright",
-        en: "Toolbox: Vite, Turbopack, Vitest, Playwright",
+        zh: "深度学习模型用于图像增强（如GAN或Diffusion模型）",
+        en: "Deep learning models for image enhancement (e.g., GAN or Diffusion models)",
       },
       {
-        zh: "组件美学：可访问性 + 设计令牌 + Storybook",
-        en: "Component aesthetics: accessibility, design tokens, Storybook",
+        zh: "特征提取与对象检测框架（如YOLO或Faster R-CNN）",
+        en: "Feature extraction and object detection frameworks (e.g., YOLO or Faster R-CNN)",
       },
       {
-        zh: "计算机视觉上手：OpenCV + PyTorch Lightning 微调与特征可视化",
-        en: "Computer vision stack: OpenCV plus PyTorch Lightning fine-tuning with feature visualizations",
+        zh: "图像分割与语义理解（使用U-Net或Mask R-CNN）",
+        en: "Image segmentation and semantic understanding (using U-Net or Mask R-CNN)",
       },
     ],
   },
   {
     title: {
-      zh: "创意代码游乐园",
-      en: "Creative coding playground",
+      zh: "嵌入式系统",
+      en: "Embedded Systems",
     },
     highlight: {
-      zh: "故事和互动都要甜",
-      en: "Stories and interactions stay sweet",
+      zh: "实时定位、建图与硬件设计",
+      en: "Real-time Localization, Mapping, and Hardware Design",
     },
     items: [
       {
-        zh: "长阅读排版 + 沉浸式体验画廊",
-        en: "Long-form layouts and immersive experience galleries",
+        zh: "SLAM（同时定位与建图）算法实现与优化",
+        en: "SLAM (Simultaneous Localization and Mapping) algorithm implementation and optimization",
       },
       {
-        zh: "Three.js + GLSL 做轻盈 3D 粉粉特效",
-        en: "Three.js + GLSL for airy 3D sparkles",
+        zh: "3D 环境建图与点云处理",
+        en: "3D environmental mapping and point cloud processing",
       },
       {
-        zh: "Figma 组件花园配套多主题皮肤",
-        en: "Figma component garden with multi-theme outfits",
+        zh: "电吉他效果器硬件设计与DSP信号处理",
+        en: "Electric guitar effects pedal hardware design and DSP signal processing",
       },
       {
-        zh: "内容创作：随笔、播客、城市灵感小卡",
-        en: "Content craft: essays, podcasts, urban inspiration cards",
+        zh: "微控制器编程（如Arduino或TM4C123）与传感器集成",
+        en: "Microcontroller programming (e.g., Arduino or STM32) and sensor integration",
+      },
+    
+    ],
+  },
+  {
+    title: {
+      zh: "操作系统",
+      en: "Operating Systems",
+    },
+    highlight: {
+      zh: "自定义配置、管理与优化",
+      en: "Custom Configuration, Management, and Optimization",
+    },
+    items: [
+      {
+        zh: "Arch Linux 安装、配置与包管理（pacman）",
+        en: "Arch Linux installation, configuration, and package management (pacman)",
+      },
+    
+      {
+        zh: "自定义内核编译与模块加载",
+        en: "Custom kernel compilation and module loading",
+      },
+      {
+        zh: "虚拟化技术（如Docker、VirtualBox或KVM）",
+        en: "Virtualization technologies (e.g., Docker, VirtualBox, or KVM)",
+      },
+      {
+        zh: "脚本自动化与Shell编程（Bash/Zsh）",
+        en: "Script automation and Shell programming (Bash/Zsh)",
+      },
+      {
+        zh: "系统安全强化与防火墙配置（ufw或firewalld）",
+        en: "System security hardening and firewall configuration (ufw or firewalld)",
       },
     ],
   },
+  
   {
     title: {
       zh: "后端与部署召唤术",
@@ -95,32 +131,5 @@ export const skills: SkillCategory[] = [
       },
     ],
   },
-  {
-    title: {
-      zh: "学习节奏心电图",
-      en: "Learning rhythm heartbeat",
-    },
-    highlight: {
-      zh: "公开迭代好开心",
-      en: "Iterate in public with sparkles",
-    },
-    items: [
-      {
-        zh: "深入：Web 性能体检 + 视觉模型评估指标",
-        en: "Deep dive: web performance diagnostics plus vision model metrics",
-      },
-      {
-        zh: "探索：用 Rust 做 CLI 小助手",
-        en: "Explore: crafting Rust CLI helpers",
-      },
-      {
-        zh: "热爱：把声音设计和可视化结合",
-        en: "Passion: blending sound design with generative visuals",
-      },
-      {
-        zh: "仪式感：每周可爱复盘 + 分享",
-        en: "Ritual: weekly kawaii retros and sharing",
-      },
-    ],
-  },
+ 
 ];
